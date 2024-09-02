@@ -20,8 +20,8 @@ pub fn main() void {
     // many-item pointer, which has no length or sentinel.
     const data: [*]const u8 = "Weird Data!";
 
-    // Please cast 'data' to 'printable':
-    const printable: [*:0]const u8 = ???;
+    // Please cast 'data' to 'printable' using @ptrCast().:
+    const printable: [*:0]const u8 = @ptrCast(data);
 
     print("{s}\n", .{printable});
 }
